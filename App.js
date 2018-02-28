@@ -7,6 +7,7 @@ import {
     TextInput,
     ScrollView
 } from 'react-native';
+import ListItem from './components/ListItem';
 import initialData from './data';
 
 const instructions = Platform.select({
@@ -63,24 +64,6 @@ export default class App extends Component {
     }
 }
 
-class ListItem extends Component {
-    render() {
-        return (
-            <View>
-                <Text style={styles.list__title}>{this.props.groupName}</Text>
-                {this.props.list.map((elem, index) => {
-                    return (
-                        <View key={index} style={styles.list__item}>
-                            <Text style={styles.list__code}>{elem.code}</Text>
-                            <Text style={styles.list__text}>{elem.title}</Text>
-                        </View>
-                    );
-                })}
-            </View>
-        );
-    }
-}
-
 const styles = StyleSheet.create({
     input: {
         marginLeft: 30,
@@ -90,24 +73,5 @@ const styles = StyleSheet.create({
     list: {
         paddingLeft: 30,
         paddingRight: 30
-    },
-    list__title: {
-        marginTop: 40,
-        marginBottom: 20,
-        fontSize: 24
-    },
-    list__item: {
-        flexDirection: 'row',
-        marginTop: 7,
-        marginBottom: 7
-    },
-    list__code: {
-        marginRight: 10,
-        fontFamily: 'monospace',
-        fontWeight: 'bold',
-        fontSize: 16
-    },
-    list__text: {
-        fontSize: 16
     }
 });
