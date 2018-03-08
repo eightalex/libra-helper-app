@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
         marginBottom: 7
     },
     list__code: {
-        marginRight: 10,
+    marginRight: 10,
         fontFamily: 'monospace',
         fontWeight: 'bold',
         fontSize: 16
-    },
+},
     list__text: {
         fontSize: 16
     }

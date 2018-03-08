@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import {
     Platform,
     StyleSheet,
-    Text,
     View,
     TextInput,
     ScrollView
 } from 'react-native';
 import ListItem from './components/ListItem';
-import initialData from './data';
+import initialData from './data_debug';
 
 const instructions = Platform.select({
     android: '1. Use this beautiful libra helper\n' +
@@ -45,12 +44,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <View>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={this.handleChange}
-                    placeholder="Start typing..."
-                />
+            <View style={styles.app}>
                 <ScrollView style={styles.list}>
                     {this.state.data.map((group, index) =>
                         <ListItem key={index}
@@ -59,19 +53,34 @@ export default class App extends Component {
                         />
                     )}
                 </ScrollView>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={this.handleChange}
+                    placeholder="Start typing..."
+                    underlineColorAndroid="transparent"
+                />
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    input: {
-        marginLeft: 30,
-        marginRight: 30,
-        fontSize: 30
+    app: {
+        flex: 1
     },
     list: {
+        flex: 1,
         paddingLeft: 30,
-        paddingRight: 30
+        paddingRight: 30,
+    },
+    inputContainer: {
+
+    },
+    input: {
+        paddingLeft: 30,
+        paddingRight: 30,
+        borderWidth: 1,
+        borderColor: '#ddd',
+        fontSize: 16
     }
 });
