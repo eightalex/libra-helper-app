@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import {
-    Platform,
-    StyleSheet,
     View,
     TextInput,
-    ScrollView
+    ScrollView,
+    StyleSheet
 } from 'react-native';
 import ListItem from './components/ListItem';
-import initialData from './data_debug';
-
-const instructions = Platform.select({
-    android: '1. Use this beautiful libra helper\n' +
-             '2. ???\n' +
-             '3. PROFIT!'
-});
+import initialData from './data';
 
 export default class App extends Component {
     constructor(props) {
